@@ -35,8 +35,19 @@ controls.forEach(control =>{
 
 //button more-couses
 const btnCouses=document.querySelector('#btn')
+
 const courses=document.querySelector('.more-courses')
 btnCouses.addEventListener('click', ()=>{
     courses.classList.toggle('active')
     btnCouses.classList.remove('more-courses')
+})
+
+let btn= document.querySelector('.bars')
+let i=document.querySelector('.icon')
+let header=document.querySelector('.nagation')
+btn.addEventListener('click', ()=>{
+    i.classList.toggle('fa-bars')
+    i.classList.toggle('fa-close')
+    header.classList.toggle('active')
+
 })

@@ -41,17 +41,24 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    background: var(--bg-color);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 100;
     padding: 2rem 9%;
     
+}
+.bars{
+    display: none;
+    font-size: 3rem;
 }
 header .logo img{
     width: 15rem;
     cursor:default;
+}
+.nagation{
+    position: relative;
 }
 header .nagation a{
     font-size: 1.5rem;
@@ -404,7 +411,6 @@ header .nagation a:last-child{
     grid-area: more-courses;
     gap: 2rem;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -859,6 +865,111 @@ video{
     letter-spacing:0.2rem;
     margin-bottom: .5rem
 }
+
+
+/*BREAKPOINTS*/
+@media(max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width: 991px){
+    header{
+        padding:2rem 4%;
+    }
+    section{
+        padding: 10rem 4% 2rem;
+    }
+    .footer{
+        padding:2rem 4%;
+    }
+    .row-faculty{
+        gap:4.2rem;
+    }
+    .row-events{
+        gap: 4.2rem;
+    }
+}
+@media(max-width:850px){
+    .home .img-bg{
+        width: 100%;
+        height: auto;
+     }
+     .home .img-bg img{
+        width: 100%;
+        font-size:50%;
+     }
+}
+@media(max-width:768px){
+    .bars{
+        display: block;
+        cursor: pointer;
+    }
+   
+    .nagation{
+        position: absolute;
+        top: 100%;
+        right:100%;
+        width: 40%;
+        padding: 2rem 4%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        z-index: 2;
+
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+    .nagation .active-navbar{
+        position: absolute;
+        top: 0;
+        right: 0%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+    .nagationa.ctive .active-navbar{
+        right:0 ;
+        transition-delay: .25s;
+     }
+    .nagation.active{
+        right: 0;
+        transition-delay: 0s;
+    }
+    header .nagation a {
+        display: block;
+        font-size: 2rem;
+        margin: 1.2rem 0;
+        margin-left: 0;
+        transform: translateX(-5rem);
+        transition: .25s ease;
+        transition-delay: 0;
+     }
+     .nagation.active a{
+        transform: translateX(0);
+        transition-delay: .25s;
+     }
+        
+   
+    header .nagation a:last-child{
+        padding: 0;
+        background: none;
+        border-radius: 0;
+    
+        border: none;
+    
+    
+    }
+    
+
+}
+
+
 
 @keyframes cardsRotion{
     100%{
